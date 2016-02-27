@@ -2,8 +2,8 @@ var Card = React.createClass({
   render: function() {
     return (
       <div>
-        <img src="" />
-        <h3>Name Here</h3>
+        <img src="https://avatars.githubusercontent.com/u/239742?v=3" width="80" />
+        <h3>Pete Hunt</h3>
         <hr/>
         </div>
     )
@@ -14,7 +14,7 @@ var Main = React.createClass({
   render: function () {
     return (
     <div>
-    ...
+      <Card />
     </div>
     )
   }
