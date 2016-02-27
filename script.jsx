@@ -21,9 +21,20 @@ var Card = React.createClass({
   }
 });
 
+var Form = React.createClass({
+  render: function() {
+    return (
+      <form onSubmit>
+        <input placeholder="github login" />
+        <button>Add</button>
+      </form>
+    )
+  }
+});
+
 var Main = React.createClass({
   getInitialState: function() {
-    return {logins:['zpao', 'fisherwebdev']};
+    return {logins:[]};
   },
   render: function () {
     var cards = this.state.logins.map(function (login){
@@ -31,6 +42,7 @@ var Main = React.createClass({
     });
     return (
     <div>
+      <Form />
       {cards}
     </div>
     )
