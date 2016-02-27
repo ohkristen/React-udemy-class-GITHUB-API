@@ -22,10 +22,16 @@ var Card = React.createClass({
 });
 
 var Form = React.createClass({
+  handleSubmit: function(e) {
+    e.preventDefault();
+    var loginInput = React.findDOMNode(this.refs.login);
+    loginInput.value = "";
+  },
+
   render: function() {
     return (
-      <form onSubmit>
-        <input placeholder="github login" />
+      <form onSubmit={this.handleSubmit} >
+        <input placeholder="github login" ref="login" />
         <button>Add</button>
       </form>
     )
