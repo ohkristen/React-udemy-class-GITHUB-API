@@ -4,19 +4,22 @@ var Card = React.createClass({
   },
 
   componentDidMount: function() {
-    $.get()
+    var component = this;
+    $.get("https://api.github.com/users/petehunt", function(data){
+      component.setState(data)
+    })
   },
 
   render: function() {
     return (
       <div>
-        <img src="" width="80" />
-        <h3>Pete Hunt</h3>
+        <img src={this.state.avatar_url} width="80" />
+        <h3>{this.state.name}</h3>
         <hr/>
         </div>
     )
   }
-})
+});
 
 var Main = React.createClass({
   render: function () {
