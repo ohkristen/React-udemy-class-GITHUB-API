@@ -5,7 +5,7 @@ var Card = React.createClass({
 
   componentDidMount: function() {
     var component = this;
-    $.get("https://api.github.com/users/petehunt", function(data){
+    $.get("https://api.github.com/users/" + this.props.login, function(data){
       component.setState(data)
     })
   },
@@ -25,6 +25,7 @@ var Main = React.createClass({
   render: function () {
     return (
     <div>
+      <Card login="spicyj"/>
       <Card login="petehunt"/>
     </div>
     )
