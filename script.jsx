@@ -3,6 +3,10 @@ var Card = React.createClass({
     return {}
   },
 
+  componentDidMount: function() {
+    $.get()
+  },
+
   render: function() {
     return (
       <div>
